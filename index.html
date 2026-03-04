@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>工地完工在即：這群工地的貓，還能去哪？</title>
+    <title>求認養!! 工地完工在即：這群工地的貓，還能去哪？</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -62,10 +62,10 @@
     <!-- 頂部海報區 -->
     <header class="hero-bg h-[380px] md:h-[450px] flex items-center justify-center text-center text-white px-4">
         <div class="max-w-4xl w-full">
-            <div class="bg-red-600 text-white font-black py-3 px-8 rounded-full mb-6 inline-flex items-center urgent-tag text-base md:text-xl tracking-[0.2em] shadow-2xl border-2 border-white/30">
-    <i class="fas fa-exclamation-triangle mr-3"></i> 工地完工在即<br>休息區拆除倒數一個多月 <i class="fas fa-exclamation-triangle ml-3"></i>
-</div>
-            <h1 class="hero-h1 text-xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">當工地完工，這群孩子還能去哪？</h1>
+            <div class="bg-red-600 text-white font-black py-3 px-8 rounded-full mb-6 inline-flex items-center urgent-tag text-lg md:text-2xl tracking-[0.2em] shadow-2xl border-2 border-white/30">
+                <i class="fas fa-exclamation-triangle mr-3"></i> 工地完工在即<br>休息區拆除倒數一個月 <i class="fas fa-exclamation-triangle ml-3"></i>
+            </div>
+            <h1 class="hero-h1 text-xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">求認養!!當工地完工，這群孩子還能去哪？</h1>
             <p class="text-lg md:text-2xl opacity-90 font-medium tracking-wide text-orange-200">工地貓貓的生存請求</p>
         </div>
     </header>
@@ -79,8 +79,7 @@
                 <p>最初是兩隻母貓，後來跑來一隻公貓，</p>
                 <p>接著陸續誕生了幾窩小貓。</p>
                 <p>雖然先前已努力幫忙送養了兩隻，</p>
-                <p>但現場仍剩下約 8 至 9 隻貓咪。<br>
-                <p>較常出現的約７隻，</p>
+                <p>但現場仍剩下約 8 至 9 隻貓咪。較常出現的約７隻，</p>
                 <p>除了兩隻盡責的貓媽媽外，</p>
                 <p>其餘的孩子都還只是六、七個月大的小貓。</p>
             </div>
@@ -117,7 +116,7 @@
         <!-- 兩隻媽貓貓 -->
         <div class="mb-16">
             <div class="flex items-center mb-6 border-b-2 border-orange-100 pb-3">
-                <div class="bg-orange-500 text-white value-10 h-10 flex items-center justify-center rounded-xl mr-3 shadow-md">
+                <div class="bg-orange-500 text-white w-10 h-10 flex items-center justify-center rounded-xl mr-3 shadow-md">
                     <i class="fas fa-heart"></i>
                 </div>
                 <h2 class="text-2xl font-bold text-slate-800">兩隻辛苦的媽貓貓</h2>
@@ -206,7 +205,7 @@
                 </div>
                 <div class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 text-center">
                     <div class="aspect-square overflow-hidden bg-gray-100">
-                        <img src="https://lh3.googleusercontent.com/d/1pHIQlj2bOD2merp1jL45FnWIhvNcCSxR" alt="孩子 6" class="w-full h-full object-cover">
+                        <img src="https://lh3.googleusercontent.com/d/10vxH1hUbCnJaZhGkaog8XiE773T_S-rA" alt="孩子 6" class="w-full h-full object-cover">
                     </div>
                     <div class="p-3">
                         <h3 class="font-bold text-center text-sm text-slate-700 mb-1">孩子 6</h3>
@@ -370,7 +369,12 @@
             el.select();
             document.execCommand('copy');
             document.body.removeChild(el);
-            alert('領養窗口聯絡資訊已複製！請開啟 LINE 貼上搜尋。');
+            // 改良提示方式，避免在 iframe 內被擋
+            const msg = document.createElement('div');
+            msg.innerText = '領養窗口聯絡資訊已複製！請開啟 LINE 貼上搜尋。';
+            msg.style.cssText = 'position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.8); color:white; padding:20px; border-radius:10px; z-index:10000; font-weight:bold;';
+            document.body.appendChild(msg);
+            setTimeout(() => document.body.removeChild(msg), 3000);
         }
     </script>
 </body>
